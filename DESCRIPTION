@@ -9,7 +9,8 @@ Depends:
     OpenMx
 AggregateMethods: paste=base::paste,
     as.logical=base::as.logical,
-    diag=base::diag
+    diag=base::diag,
+    NROW=base::NROW
 AssignMethods: runMx.ds=OpenMx::runMx,
     equals.logical,
     summary=base::summary,
