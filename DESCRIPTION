@@ -16,4 +16,5 @@ AssignMethods: runMx.ds=OpenMx::runMx,
     summary=base::summary,
     colMeans=base::colMeans,
     paste=base::paste,
-    as.logical=base::as.logical
+    as.logical=base::as.logical,
+    rep=base::rep
