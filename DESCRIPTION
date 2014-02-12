@@ -7,13 +7,13 @@ Title: Datashield for package advanced structural equation modeling
 Description: This package implement functions from the OpenMx package.
 Depends:
     OpenMx
-AggregateMethods: paste=base::paste,
-    as.logical=base::as.logical,
-    diag=base::diag,
+AggregateMethods: diag=base::diag,
     NROW=base::NROW
 AssignMethods: runMx.ds=OpenMx::runMx,
     equals.logical,
     summary=base::summary,
     cor=stats::cor,
     var=stats::var,
-    colMeans=base::colMeans
+    colMeans=base::colMeans,
+    paste=base::paste,
+    as.logical=base::as.logical
