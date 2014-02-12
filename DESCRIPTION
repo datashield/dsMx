@@ -8,12 +8,12 @@ Description: This package implement functions from the OpenMx package.
 Depends:
     OpenMx
 AggregateMethods: diag=base::diag,
-    NROW=base::NROW
+    NROW=base::NROW,
+    cor=stats::cor,
+    var=stats::var
 AssignMethods: runMx.ds=OpenMx::runMx,
     equals.logical,
     summary=base::summary,
-    cor=stats::cor,
-    var=stats::var,
     colMeans=base::colMeans,
     paste=base::paste,
     as.logical=base::as.logical
