@@ -7,3 +7,4 @@ Title: Datashield package advanced structural equation modeling
 Description: This package implement functions from the OpenMx package.
 Depends:
     OpenMx
+AssignMethods: runMx.ds=OpenMx::runMx
