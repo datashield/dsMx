@@ -6,5 +6,7 @@ License: GPL-3
 Title: Datashield for package advanced structural equation modeling
 Description: This package implement functions from the OpenMx package.
 Depends:
-    OpenMx
-AssignMethods: runMx.ds=OpenMx::runMx
+    OpenMx,
+    dsbase
+AssignMethods: runMx.ds=OpenMx::runMx,
+    equals.logical
