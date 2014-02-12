@@ -1,0 +1,9 @@
+Package: dsMx
+Maintainer: <datashield@obiba.org>
+Author: <datashield@obiba.org>
+Version: 1.0
+License: GPL-3
+Title: Datashield package advanced structural equation modeling
+Description: This package implement functions from the OpenMx package.
+Depends:
+    OpenMx
