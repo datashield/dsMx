@@ -1,2 +1,2 @@
 export(equals.logical)
-export(load.omxSymbolTable)
+export(mxAlgebra)
