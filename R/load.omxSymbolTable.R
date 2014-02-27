@@ -3,7 +3,7 @@
 #' @description not important
 #' @export
 #' 
-load.omxSymbolTable <- function (){
+load.omxSymbolTable <- function (...){
   library('OpenMx')
   data(omxSymbolTable)
 }
