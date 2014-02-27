@@ -1,1 +1,2 @@
 export(equals.logical)
+export(load.omxSymbolTable)
