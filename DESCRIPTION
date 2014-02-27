@@ -22,7 +22,7 @@ AssignMethods: runMx.ds=OpenMx::runMx,
     mxData=OpenMx::mxData,
     mxFIMLObjective=OpenMx::mxFIMLObjective,
     mxModel=OpenMx::mxModel,
-    mxAlgebra,
+    mxAlgebraDS,
     mxAlgebraObjective=OpenMx::mxAlgebraObjective,
     mxCI=OpenMx::mxCI,
     mxRun=OpenMx::mxRun

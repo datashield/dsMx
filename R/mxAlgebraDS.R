@@ -13,7 +13,8 @@
 #' it load 'omxSymbolTable'.
 #' @export
 #' 
-mxAlgebra <- function (expression, name = NA, dimnames = NA){
+mxAlgebraDS <- function (expression, name = NA, dimnames = NA){
   data(omxSymbolTable)
-  OpenMx::mxAlgebra(expression, name, dimnames)
+  output <- mxAlgebra(expression, name, dimnames)
+  return(output)
 }

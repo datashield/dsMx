@@ -1,8 +1,8 @@
-\name{mxAlgebra}
-\alias{mxAlgebra}
+\name{mxAlgebraDS}
+\alias{mxAlgebraDS}
 \title{loads 'omxSymbolTable' and runs 'mxAlgebra'}
 \usage{
-mxAlgebra(expression, name = NA, dimnames = NA)
+mxAlgebraDS(expression, name = NA, dimnames = NA)
 }
 \arguments{
   \item{expression}{An R expression of OpenMx-supported
