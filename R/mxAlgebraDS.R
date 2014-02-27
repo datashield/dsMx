@@ -15,6 +15,9 @@
 #' 
 mxAlgebraDS <- function (expression, name = NA, dimnames = NA){
   data(omxSymbolTable)
-  output <- OpenMx::mxAlgebra(expression, name, dimnames)
+  e <- expression
+  n <- name
+  d <- dimnames
+  output <- OpenMx::mxAlgebra(e, n, d)
   return(output)
 }
