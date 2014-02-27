@@ -4,8 +4,7 @@
 #' @description not important
 #' @export
 #' 
-load.omxSymbolTable <- function (a="l"){
+load.omxSymbolTable <- function (a=NULL){
   dummy <- a
-  library('OpenMx')
   data(omxSymbolTable)
 }

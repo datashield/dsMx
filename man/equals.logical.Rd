@@ -5,9 +5,9 @@
 equals.logical(a, b)
 }
 \arguments{
-  \item{a}{}
+  \item{a}{first variable}
 
-  \item{b}{}
+  \item{b}{second variable}
 }
 \description{
 not important

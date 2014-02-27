@@ -1,8 +1,8 @@
 #' 
 #' @title logical operator
 #' @description not important
-#' @param a
-#' @param b
+#' @param a first variable
+#' @param b second variable
 #' @export
 #' 
 equals.logical <- function (a,b){
