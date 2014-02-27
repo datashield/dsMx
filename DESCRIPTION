@@ -11,7 +11,8 @@ AggregateMethods: NROW=base::NROW,
     cor=stats::cor,
     var=stats::var,
     colMeans=base::colMeans,
-    summary=base::summary
+    summary=base::summary,
+    load.omxSymbolTable
 AssignMethods: runMx.ds=OpenMx::runMx,
     equals.logical,
     load.omxSymbolTable,
