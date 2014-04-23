@@ -25,4 +25,5 @@ AssignMethods: runMx.ds=OpenMx::runMx,
     mxAlgebraDS,
     mxAlgebraObjective=OpenMx::mxAlgebraObjective,
     mxCI=OpenMx::mxCI,
-    mxRun=OpenMx::mxRun
+    mxRun=OpenMx::mxRun,
+    productDS
