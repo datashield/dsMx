@@ -12,7 +12,8 @@ AggregateMethods: NROW=base::NROW,
     var=stats::var,
     colMeans=base::colMeans,
     summary=base::summary,
-    mxAlgebraDS
+    mxAlgebraDS,
+    c=base::c
 AssignMethods: runMx.ds=OpenMx::runMx,
     equals.logical,
     paste=base::paste,
