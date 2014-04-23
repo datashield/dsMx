@@ -1,6 +1,6 @@
 #' 
 #' @title loads 'omxSymbolTable' and runs 'mxAlgebra'
-#' @param expression An R expression of OpenMx-supported matrix operators and
+#' @param expr, an R expression of OpenMx-supported matrix operators and
 #' matrix functions.
 #' @param name An optional character string indicating the name of the
 #' object.
@@ -13,11 +13,10 @@
 #' it load 'omxSymbolTable'.
 #' @export
 #' 
-mxAlgebraDS <- function (expression, name = NA, dimnames = NA){
+mxAlgebraDS <- function (expr, name = NA, dimnames = NA){
   data(omxSymbolTable)
-  e <- expression
   n <- name
   d <- dimnames
-  output <- OpenMx::mxAlgebra(expression=e, name=n, dimnames=d)
+  output <- OpenMx::mxAlgebra(expression=expr, name=n, dimnames=d)
   return(output)
 }
