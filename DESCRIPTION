@@ -28,4 +28,5 @@ AssignMethods: runMx.ds=OpenMx::runMx,
     mxRun=OpenMx::mxRun,
     productDS,
     subset=base::subset,
-    mxAlgebra=OpenMx::mxAlgebra
+    mxAlgebra=OpenMx::mxAlgebra,
+    data=base::data
