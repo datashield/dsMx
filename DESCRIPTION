@@ -5,8 +5,6 @@ Version: 1.0
 License: GPL-3
 Title: Datashield for package advanced structural equation modeling
 Description: This package implement functions from the OpenMx package.
-Depends:
-    OpenMx
 AggregateMethods: NROW=base::NROW,
     cor=stats::cor,
     var=stats::var,
