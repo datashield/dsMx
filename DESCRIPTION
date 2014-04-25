@@ -28,5 +28,4 @@ AssignMethods: runMx.ds=OpenMx::runMx,
     productDS,
     subset=base::subset,
     mxAlgebra=OpenMx::mxAlgebra,
-    data=base::data,
-    mxAlgebraDS
+    loadomxSymbolTableDS
