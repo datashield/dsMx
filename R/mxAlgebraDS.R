@@ -13,9 +13,10 @@
 #' @export
 #' 
 mxAlgebraDS <- function (expr, name = NA, dimnames = NA){
-  data(omxSymbolTable)
+  e <- expr
   n <- name
   d <- dimnames
-  output <- OpenMx::mxAlgebra(expr, name=n, dimnames=d)
-  return(output)
+  #output <- OpenMx::mxAlgebra(expr, name=n, dimnames=d)
+  #return(output)
+  data(omxSymbolTable)
 }
