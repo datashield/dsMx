@@ -1,6 +1,6 @@
 \name{mxAlgebraDS}
 \alias{mxAlgebraDS}
-\title{loads 'omxSymbolTable' and runs 'mxAlgebra'}
+\title{Runs 'mxAlgebra'}
 \usage{
 mxAlgebraDS(expr, name = NA, dimnames = NA)
 }
@@ -19,7 +19,7 @@ mxAlgebraDS(expr, name = NA, dimnames = NA)
 }
 \description{
 this is exactly the same as the function in 'OpenMx' except
-that it provides the workaround to the difficulty of
+that it provides a workaround to the difficulty of
 loading/and/or using omxSymbolTable from the client side
 }
 \details{
