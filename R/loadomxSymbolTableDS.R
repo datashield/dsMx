@@ -6,6 +6,6 @@
 #' 
 loadomxSymbolTableDS <- function (){
   library(OpenMx)
-  omxSymbolTable <- data(omxSymbolTable)
+  omxSymbolTable <- data(omxSymbolTable, envir = environment())
   return(omxSymbolTable)
 }
