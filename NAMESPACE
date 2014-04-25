@@ -1,3 +1,2 @@
 export(equals.logical)
-export(loadomxSymbolTableDS)
 export(productDS)
