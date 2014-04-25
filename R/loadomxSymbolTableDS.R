@@ -5,5 +5,6 @@
 #' @export
 #' 
 loadomxSymbolTableDS <- function (){
-  data(omxSymbolTable, envir = environment())
+  omxSymbolTable <- data(omxSymbolTable)
+  return(omxSymbolTable)
 }
