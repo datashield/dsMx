@@ -13,7 +13,7 @@ AggregateMethods: NROW=base::NROW,
     list=base::list
 AssignMethods: mxRun.ds=OpenMx::mxRun,
     equals.logical,
-    paste=base::paste,
+    paste0=base::paste0,
     as.logical=base::as.logical,
     rep=base::rep,
     diag=base::diag,
