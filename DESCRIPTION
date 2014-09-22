@@ -11,7 +11,7 @@ AggregateMethods: NROW=base::NROW,
     colMeans=base::colMeans,
     summary=base::summary,
     list=base::list
-AssignMethods: mxRun.ds=OpenMx::mxRun,
+AssignMethods: mxRun=OpenMx::mxRun,
     equals.logical,
     paste0=base::paste0,
     as.logical=base::as.logical,
