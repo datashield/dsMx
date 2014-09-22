@@ -10,7 +10,8 @@ AggregateMethods: NROW=base::NROW,
     var=stats::var,
     colMeans=base::colMeans,
     summary=base::summary,
-  mxRun.ds=OpenMx::mxRun,
+    ls=base::ls
+AssignMethods: mxRun.ds=OpenMx::mxRun,
     equals.logical,
     paste=base::paste,
     as.logical=base::as.logical,
@@ -25,5 +26,4 @@ AggregateMethods: NROW=base::NROW,
     productDS,
     subset=base::subset,
     mxAlgebra=OpenMx::mxAlgebra,
-    mxAlgebraDS  
-
+    mxAlgebraDS
