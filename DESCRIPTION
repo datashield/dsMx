@@ -27,6 +27,6 @@ AssignMethods: mxRun=OpenMx::mxRun,
     subset=base::subset,
     mxAlgebra=OpenMx::mxAlgebra,
     mxAlgebraDS,
-    subset=base::subset,
+    sort=base::sort
     list=base::list,
     quote=base::quote
