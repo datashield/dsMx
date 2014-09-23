@@ -1,3 +1,2 @@
-export(equals.logical)
 export(mxAlgebraDS)
 export(productDS)
