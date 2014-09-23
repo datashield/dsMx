@@ -8,6 +8,9 @@ mxRunSummaryDS(input)
   \item{input}{an object of type "MxModel", the ouput of an
   'mxRun' fit.}
 }
+\value{
+a list that holds the summary items.
+}
 \description{
 This function ensures the summaries returned to user
 contain no potentially disclosive information.
@@ -15,9 +18,9 @@ contain no potentially disclosive information.
 \details{
 
 
-It essentially removes the min and max values from the data
-sumamries and delete irrelevant information such as the cpu
-time.
+It essentially removes the min and max values from the
+summaries and store the summary items in a list that is
+returned.
 }
 \author{
 A. Gaye

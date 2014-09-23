@@ -2,9 +2,10 @@
 #' @title Generates the summary from the output of an 'mxRun' fit
 #' @description This function ensures the summaries returned to user 
 #' contain no potentially disclosive information.
-#' @details It essentially removes the min and max values from the data 
-#' sumamries and delete irrelevant information such as the cpu time.
+#' @details It essentially removes the min and max values from the
+#' summaries and store the summary items in a list that is returned.
 #' @param input an object of type "MxModel", the ouput of an 'mxRun' fit.
+#' @return a list that holds the summary items.
 #' @export
 #' @author A. Gaye
 #' 
@@ -26,6 +27,9 @@ mxRunSummaryDS <- function (input){
       output$dataSummary[[i]][lrw,] <- c(rep("Max.   :------  ",2))
     }
   }
-  
-  return(output)
+  outputf <- vector('list', length(output))
+  for(i in 1:length(output)){
+    outputf[[i]] <- output[i]
+  }
+  return(outputf)
 }
