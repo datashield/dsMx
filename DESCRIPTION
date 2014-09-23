@@ -9,7 +9,6 @@ AggregateMethods: NROW=base::NROW,
     cor=stats::cor,
     var=stats::var,
     colMeans=base::colMeans,
-    summary=base::summary,
     list=base::list
 AssignMethods: mxRun=OpenMx::mxRun,
     paste0=base::paste0,
@@ -24,4 +23,4 @@ AssignMethods: mxRun=OpenMx::mxRun,
     mxAlgebra=OpenMx::mxAlgebra,
     mxAlgebraDS,
     mxRename=OpenMx::mxRename,
-    list=base::list
+    summary=base::summary
