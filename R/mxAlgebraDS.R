@@ -12,7 +12,8 @@
 #' provides a workaround to the difficulty of loading/and/or using omxSymbolTable
 #' from the client side
 #' @export
-#'
+#' @author A. Gaye
+#' 
 mxAlgebraDS <- function (expr, name = NA, dimnames = NA){
   myexpr <- paste0("mxAlgebra(", expr,", '", name, "', ", dimnames, ")")
   library(OpenMx)

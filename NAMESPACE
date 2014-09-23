@@ -1,2 +1,2 @@
 export(mxAlgebraDS)
-export(productDS)
+export(mxRunSummaryDS)

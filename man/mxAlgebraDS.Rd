@@ -25,4 +25,7 @@ loading/and/or using omxSymbolTable from the client side
 \details{
 
 }
+\author{
+A. Gaye
+}
 
