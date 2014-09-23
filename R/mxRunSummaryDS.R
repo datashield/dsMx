@@ -11,6 +11,7 @@
 #' 
 mxRunSummaryDS <- function (input){
   # get the overall summary 
+  library(OpenMx)
   output <- summary(input)
   
   # remove non relevant information
