@@ -5,7 +5,9 @@
 mxAlgebraDS(expr, name = NA, dimnames = NA)
 }
 \arguments{
-  \item{expr}{a character, the expression to evaluate}
+  \item{expr}{a list which contains the objects to carry
+  out a caluclation for and the algebraic operator or null
+  if no operator symbol is required.}
 
   \item{name}{an optional character string indicating the
   name of the object.}

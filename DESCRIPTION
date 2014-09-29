@@ -23,4 +23,4 @@ AssignMethods: mxRun=OpenMx::mxRun,
     mxCI=OpenMx::mxCI,
     mxAlgebra=OpenMx::mxAlgebra,
     mxAlgebraDS,
-    mxRename=OpenMx::mxRename
+    list=base::list
