@@ -12,8 +12,7 @@
 mxSummaryDS <- function (input){
   # get the overall summary
   library(OpenMx)
-  obj2summarize <- input[[1]]
-  output <- summary(obj2summarize)
+  output <- summary(input)
   
   # remove non relevant information
   idx1 <- which(names(output) %in% c("frontendTime", "backendTime", "independentTime", "wallTime", "cpuTime"))
@@ -30,5 +29,5 @@ mxSummaryDS <- function (input){
     }
   }
 
-  return(output)
+  return(input)
 }
