@@ -11,6 +11,7 @@
 #' 
 mxSummaryDS <- function (input){
   # get the overall summary
+  library(OpenMx)
   obj2summarize <- input[[1]]
   output <- summary(obj2summarize)
   
