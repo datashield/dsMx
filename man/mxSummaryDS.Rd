@@ -1,8 +1,8 @@
-\name{mxRunSummaryDS}
-\alias{mxRunSummaryDS}
+\name{mxSummaryDS}
+\alias{mxSummaryDS}
 \title{Generates the summary from the output of an 'mxRun' fit}
 \usage{
-mxRunSummaryDS(input)
+mxSummaryDS(input)
 }
 \arguments{
   \item{input}{an object of type "MxModel", the ouput of an
