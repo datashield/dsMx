@@ -10,7 +10,7 @@ AggregateMethods: NROW=base::NROW,
     var=stats::var,
     colMeans=base::colMeans,
     list=base::list,
-    mxSummaryDS,
+    mxSummaryDS
 AssignMethods: mxRun=OpenMx::mxRun,
     paste0=base::paste0,
     rep=base::rep,
