@@ -15,8 +15,8 @@ mxSummaryDS <- function (input){
   output <- summary(input)
   
   # remove non relevant information
-  idx1 <- which(names(output) %in% c("frontendTime", "backendTime", "independentTime", "wallTime", "cpuTime"))
-  if(length(idx1) > 0){ output <- output[-idx1] }
+  #idx1 <- which(names(output) %in% c("frontendTime", "backendTime", "independentTime", "wallTime", "cpuTime"))
+  #if(length(idx1) > 0){ output <- output[-idx1] }
   
   # remove the min and max values from the summary
   idx2 <- which(names(output) == "dataSummary")
@@ -29,5 +29,5 @@ mxSummaryDS <- function (input){
     }
   }
 
-  return(input)
+  return(output)
 }
