@@ -22,7 +22,7 @@
 #' Timothy C. Bates, Paras Mehta, Timo von Oertzen, Ross J. Gore, Michael D. Hunter, Daniel C. Hackett, Julian Karch and 
 #' Andreas M. Brandmaier. (2012) OpenMx 1.3 User Guide.
 #' 
-ds.mxDataDS <- function(observed, type, means, numObs){
+mxDataDS <- function(observed, type, means, numObs){
   # this filter sets the minimum number of observations that are allowed 
   nfilter <- setFilterDS()
   
