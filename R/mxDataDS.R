@@ -24,7 +24,7 @@
 #' 
 mxDataDS <- function(observed, type, means, numObs){
   # this filter sets the minimum number of observations that are allowed 
-  nfilter <- setFilterDS()
+  nfilter <- setFilter()
   
   # call the OpenMx 'mxData' function
   library(OpenMx)
