@@ -31,16 +31,17 @@ mxDataDS <- function(observed, type, means, numObs){
   dt <- mxData(observed, type, means, numObs)
   
   # check if the ouput matrix is valid or empty (i.e. no observation) and return accordingly
-  if(dim(dt)[1] < nfilter){
-    if(dim(dt)[1] == 0){
-      output <- as.data.frame(matrix(NA,nrow=1, ncol=dim(dt)[2]))
-      colnames(output) <- colnames(dt)
-    }else{
-      output <- as.data.frame(matrix(NA,nrow=dim(dt)[1], ncol=dim(dt)[2]))
-      colnames(output) <- colnames(dt)
-    }
-  }
+#   if(dim(dt)[1] < nfilter){
+#     if(dim(dt)[1] == 0){
+#       output <- as.data.frame(matrix(NA,nrow=1, ncol=dim(dt)[2]))
+#       colnames(output) <- colnames(dt)
+#     }else{
+#       output <- as.data.frame(matrix(NA,nrow=dim(dt)[1], ncol=dim(dt)[2]))
+#       colnames(output) <- colnames(dt)
+#     }
+#   }
   
-  return(output)
+  #return(output)
+  return(dt)
   
 }
