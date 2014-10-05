@@ -7,18 +7,14 @@ Title: Datashield for package advanced structural equation modeling
 Description: This package implement functions from the OpenMx package
 Depends:
     OpenMx
-AggregateMethods: NROW=base::NROW,
-    cor=stats::cor,
-    var=stats::var,
-    colMeans=base::colMeans,
-    list=base::list,
-    mxSummaryDS
+AggregateMethods: list=base::list,
+    summary=base::summary
 AssignMethods: mxRun=OpenMx::mxRun,
     paste0=base::paste0,
     rep=base::rep,
     diag=base::diag,
     mxMatrix=OpenMx::mxMatrix,
-    mxDataDS,
+    mxData=OpenMx::mxData,
     mxFIMLObjective=OpenMx::mxFIMLObjective,
     mxModel=OpenMx::mxModel,
     mxAlgebraObjective=OpenMx::mxAlgebraObjective,
