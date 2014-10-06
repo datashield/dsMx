@@ -1,8 +1,8 @@
-\name{ds.mxModelDS}
-\alias{ds.mxModelDS}
+\name{mxModelDS}
+\alias{mxModelDS}
 \title{Creates a new mxModel object}
 \usage{
-ds.mxModelDS(model = NA, ..., manifestVars, latentVars, remove, independent,
+mxModelDS(model = NA, lst, manifestVars, latentVars, remove, independent,
   type, name)
 }
 \arguments{
@@ -14,7 +14,7 @@ ds.mxModelDS(model = NA, ..., manifestVars, latentVars, remove, independent,
   either unspecified or 'model' is a named entity, data
   source, or MxPath object, then a new model is created.}
 
-  \item{vst}{a list of character strings, the names of an
+  \item{lst}{a list of character strings, the names of an
   arbitrary number of mxMatrix, mxPath, mxData, and other
   functions such as mxConstraints and mxCI. These will all
   be added or removed from the model as specified in the

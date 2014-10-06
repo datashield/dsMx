@@ -7,7 +7,7 @@
 #' If 'model' is a string, then a new model is created with the string as its name. If 'model' 
 #' is either unspecified or 'model' is a named entity, data source, or MxPath object, then a 
 #' new model is created.
-#' @param vst a list of character strings, the names of an arbitrary number of mxMatrix, mxPath, 
+#' @param lst a list of character strings, the names of an arbitrary number of mxMatrix, mxPath, 
 #' mxData, and other functions such as mxConstraints and mxCI. These will all be added or removed 
 #' from the model as specified in the 'model' argument, based on the 'remove' argument.
 #' @param manifestVars for RAM-type models, a list of manifest variables to be included in the model.
@@ -29,12 +29,31 @@
 #' Timothy C. Bates, Paras Mehta, Timo von Oertzen, Ross J. Gore, Michael D. Hunter, Daniel C. Hackett, Julian Karch and 
 #' Andreas M. Brandmaier. (2012) OpenMx 1.3 User Guide.
 #' 
-ds.mxModelDS <- function(model=NA, ..., manifestVars, latentVars, remove, independent, type, name){
-
-  # call the OpenMx 'mxData' function
-  library(OpenMx)
-  mm <- mxModel(model=model, ...,manifestVars=manifestVars, latentVars=latentVars, remove=remove, independent=independent, type=type, name=name)
-
-  return(mm)
+mxModelDS <- function(model=NA, lst, manifestVars, latentVars, remove, independent, type, name){
   
+  # construct the command to evaluate
+  args1 <- lst
+  args2 <- list(manifestVars, latentVars, remove, independent, type, name)
+  argnm <- c("manifestVars", "latentVars", "remove", "independent", "type", "name")
+  argsall <- c(args1, args2)
+  myexpr <- paste0("mxModel('",model,"', ")
+  l1 <- length(argsall)
+  l2 <- length(args1)
+  for(i in 1:length(argsall)){
+    if(i < l1){
+      if(i > l2){
+        cat(argnm[i-l2],"\n")
+        myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ", ")
+      }else{
+        myexpr <- paste0(myexpr, argsall[[i]], ", ") 
+      }
+    }else{
+      myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ")")         
+    }
+  }
+  
+  # call the OpenMx 'mxModel' function
+  library(OpenMx)
+  output <- eval(parse(text=myexpr))
+  return(output)
 }
