@@ -29,11 +29,11 @@
 #' Timothy C. Bates, Paras Mehta, Timo von Oertzen, Ross J. Gore, Michael D. Hunter, Daniel C. Hackett, Julian Karch and 
 #' Andreas M. Brandmaier. (2012) OpenMx 1.3 User Guide.
 #' 
-ds.mxModelDS <- function(model=NA, vst, manifestVars, latentVars, remove, independent, type, name){
+ds.mxModelDS <- function(model=NA, ..., manifestVars, latentVars, remove, independent, type, name){
 
   # call the OpenMx 'mxData' function
   library(OpenMx)
-  mm <- mxModel(model=model, unlist(vst),manifestVars=manifestVars, latentVars=latentVars, remove=remove, independent=independent, type=type, name=name)
+  mm <- mxModel(model=model, ...,manifestVars=manifestVars, latentVars=latentVars, remove=remove, independent=independent, type=type, name=name)
 
   return(mm)
   
