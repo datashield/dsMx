@@ -33,7 +33,7 @@ ds.mxModelDS <- function(model=NA, ..., manifestVars, latentVars, remove, indepe
 
   # call the OpenMx 'mxData' function
   library(OpenMx)
-  mm <- mxModel(model=model, ...,manifestVars=manifestVars, latentVars=latentVars, remove=remove, independent=independent, type=type, name=name)
+  mm <- mxModel(model=model, ...)#,manifestVars=manifestVars, latentVars=latentVars, remove=remove, independent=independent, type=type, name=name)
 
   return(mm)
   
