@@ -21,6 +21,7 @@
 #' @return a new mxModel object. MxModel objects must include an objective function to be used as 
 #' arguments in mxRun functions.
 #' @author Gaye, A.
+#' @export
 #' @references   Steven M. Boker, Michael C. Neale, Hermine H. Maes, Michael J. Wilde, Michael Spiegel, Timothy R. Brick, 
 #' Jeffrey Spies, Ryne Estabrook, Sarah Kenny, Timothy C., Bates, Paras Mehta, and John Fox. (2011) 
 #' OpenMx: An Open Source Extended Structural Equation Modeling Framework. Psychometrika. 
