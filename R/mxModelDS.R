@@ -7,8 +7,8 @@
 #' If 'model' is a string, then a new model is created with the string as its name. If 'model' 
 #' is either unspecified or 'model' is a named entity, data source, or MxPath object, then a 
 #' new model is created.
-#' @param lst a list of character strings, the names of an arbitrary number of mxMatrix, mxPath, 
-#' mxData, and other functions such as mxConstraints and mxCI. These will all be added or removed 
+#' @param lst a list of an arbitrary number of mxMatrix, mxPath, mxData, and other functions 
+#' such as mxConstraints and mxCI. These will all be added or removed 
 #' from the model as specified in the 'model' argument, based on the 'remove' argument.
 #' @param manifestVars for RAM-type models, a list of manifest variables to be included in the model.
 #' @param latentVars for RAM-type models, A list of latent variables to be included in the model.
@@ -36,19 +36,27 @@ mxModelDS <- function(model, lst, manifestVars, latentVars, remove, independent,
   args2 <- list(manifestVars, latentVars, remove, independent, type, name)
   argnm <- c("manifestVars", "latentVars", "remove", "independent", "type", "name")
   argsall <- c(args1, args2)
-  myexpr <- paste0("mxModel(",model,", ")
+  myexpr <- paste0("mxModel('",model,"', ")
   l1 <- length(argsall)
   l2 <- length(args1)
   for(i in 1:length(argsall)){
     if(i < l1){
       if(i > l2){
-        cat(argnm[i-l2],"\n")
-        myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ", ")
+        # if the argument value is a character take it into account by added single quotes '' around it.
+        if(class(argsall[[i]]) == "character"){
+          myexpr <- paste0(myexpr, argnm[i-l2], "='", argsall[[i]], "', ")
+        }else{
+          myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ", ")
+        }
       }else{
         myexpr <- paste0(myexpr, argsall[[i]], ", ") 
       }
     }else{
-      myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ")")         
+      if(class(argsall[[i]]) == "character"){
+        myexpr <- paste0(myexpr, argnm[i-l2], "='", argsall[[i]], "')")   
+      }else{
+        myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ")")           
+      }
     }
   }
   

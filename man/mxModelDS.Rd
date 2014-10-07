@@ -13,11 +13,11 @@ mxModelDS(model, lst, manifestVars, latentVars, remove, independent, type, name)
   either unspecified or 'model' is a named entity, data
   source, or MxPath object, then a new model is created.}
 
-  \item{lst}{a list of character strings, the names of an
-  arbitrary number of mxMatrix, mxPath, mxData, and other
-  functions such as mxConstraints and mxCI. These will all
-  be added or removed from the model as specified in the
-  'model' argument, based on the 'remove' argument.}
+  \item{lst}{a list of an arbitrary number of mxMatrix,
+  mxPath, mxData, and other functions such as mxConstraints
+  and mxCI. These will all be added or removed from the
+  model as specified in the 'model' argument, based on the
+  'remove' argument.}
 
   \item{manifestVars}{for RAM-type models, a list of
   manifest variables to be included in the model.}
