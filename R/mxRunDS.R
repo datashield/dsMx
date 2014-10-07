@@ -24,11 +24,8 @@
 mxRunDS <- function(model, intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer){
   
   # construct the command to evaluate
-  if(is.na(model)){
-    myexpr <- paste0("mxRun(model=",model,",intervals=",intervals,",silent=",silent,",suppressWarnings=",suppressWarnings,",unsafe=",unsafe,",checkpoint=",checkpoint,",useSocket=",useSocket,",onlyFrontend=",onlyFrontend,",useOptimizer=",useOptimizer,")")
-  }else{
-    myexpr <- paste0("mxRun(model='",model,"',intervals=",intervals,",silent=",silent,",suppressWarnings=",suppressWarnings,",unsafe=",unsafe,",checkpoint=",checkpoint,",useSocket=",useSocket,",onlyFrontend=",onlyFrontend,",useOptimizer=",useOptimizer,")")
-  }
+  myexpr <- paste0("mxRun(model=",model,",intervals=",intervals,",silent=",silent,",suppressWarnings=",suppressWarnings,",unsafe=",unsafe,",checkpoint=",checkpoint,",useSocket=",useSocket,",onlyFrontend=",onlyFrontend,",useOptimizer=",useOptimizer,")")
+
 
   # call the OpenMx 'mxModel' function
   library(OpenMx)
