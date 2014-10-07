@@ -27,7 +27,12 @@ mxRunDS <- function(model, intervals, silent, suppressWarnings, unsafe, checkpoi
   argsall <- c(intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer)
   argnm <-  c("intervals", "silent", "suppressWarnings", "unsafe", "checkpoint", "useSocket", "onlyFrontend", "useOptimizer")
   l <- length(argsall)
-  myexpr <- paste0("mxRun(model='",model,"', NULL,")
+  if(is.na(model)){
+    myexpr <- paste0("mxRun(model=",model,",")
+  }else{
+    myexpr <- paste0("mxRun(model='",model,"',")    
+  }
+
   for(i in 1:length(argsall)){
     if(i < l){
       if(class(argsall[[i]]) == "character"){

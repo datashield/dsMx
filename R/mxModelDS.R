@@ -36,7 +36,11 @@ mxModelDS <- function(model, lst, manifestVars, latentVars, remove, independent,
   args2 <- list(manifestVars, latentVars, remove, independent, type, name)
   argnm <- c("manifestVars", "latentVars", "remove", "independent", "type", "name")
   argsall <- c(args1, args2)
-  myexpr <- paste0("mxModel('",model,"', ")
+  if(is.na(model)){
+    myexpr <- paste0("mxModel(model=",model,",")
+  }else{
+    myexpr <- paste0("mxModel(model='",model,"',")    
+  }
   l1 <- length(argsall)
   l2 <- length(args1)
   for(i in 1:length(argsall)){
