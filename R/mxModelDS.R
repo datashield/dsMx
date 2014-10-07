@@ -53,7 +53,6 @@ mxModelDS <- function(model=NA, lst, manifestVars, latentVars, remove, independe
   }
   
   # call the OpenMx 'mxModel' function
-  library(OpenMx)
   output <- eval(parse(text=myexpr))
   return(output)
 }
