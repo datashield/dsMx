@@ -24,29 +24,10 @@
 mxRunDS <- function(model, intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer){
   
   # construct the command to evaluate
-  argsall <- c(intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer)
-  argnm <-  c("intervals", "silent", "suppressWarnings", "unsafe", "checkpoint", "useSocket", "onlyFrontend", "useOptimizer")
-  l <- length(argsall)
   if(is.na(model)){
-    myexpr <- paste0("mxRun(model=",model,",")
+    myexpr <- paste0("mxRun(model=",model,",intervals=",intervals,",silent=",silent,",suppressWarnings=",suppressWarnings,",unsafe=",unsafe,",checkpoint=",checkpoint,",useSocket=",useSocket,",onlyFrontend=",onlyFrontend,",useOptimizer=",useOptimizer,")")
   }else{
-    myexpr <- paste0("mxRun(model='",model,"',")    
-  }
-
-  for(i in 1:length(argsall)){
-    if(i < l){
-      if(class(argsall[[i]]) == "character"){
-        myexpr <- paste0(myexpr, argnm[i], "='", argsall[[i]], "', ")        
-      }else{
-        myexpr <- paste0(myexpr, argnm[i], "=", argsall[[i]], ", ")        
-      }
-    }else{
-      if(class(argsall[[i]]) == "character"){
-        myexpr <- paste0(myexpr, argnm[i], "='", argsall[[i]], "'')")   
-      }else{
-        myexpr <- paste0(myexpr, argnm[i], "=", argsall[[i]], ")")           
-      }
-    }
+    myexpr <- paste0("mxRun(model='",model,"',intervals=",intervals,",silent=",silent,",suppressWarnings=",suppressWarnings,",unsafe=",unsafe,",checkpoint=",checkpoint,",useSocket=",useSocket,",onlyFrontend=",onlyFrontend,",useOptimizer=",useOptimizer,")")
   }
 
   # call the OpenMx 'mxModel' function

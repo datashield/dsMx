@@ -33,36 +33,20 @@ mxModelDS <- function(model, lst, manifestVars, latentVars, remove, independent,
   
   # construct the command to evaluate
   args1 <- lst
-  args2 <- list(manifestVars, latentVars, remove, independent, type, name)
-  argnm <- c("manifestVars", "latentVars", "remove", "independent", "type", "name")
-  argsall <- c(args1, args2)
   if(is.na(model)){
     myexpr <- paste0("mxModel(model=",model,",")
   }else{
     myexpr <- paste0("mxModel(model='",model,"',")    
   }
-  l1 <- length(argsall)
-  l2 <- length(args1)
-  for(i in 1:length(argsall)){
+  l1 <- length(args1)
+  for(i in 1:l1){
     if(i < l1){
-      if(i > l2){
-        # if the argument value is a character take it into account by added single quotes '' around it.
-        if(class(argsall[[i]]) == "character"){
-          myexpr <- paste0(myexpr, argnm[i-l2], "='", argsall[[i]], "', ")
-        }else{
-          myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ", ")
-        }
-      }else{
-        myexpr <- paste0(myexpr, argsall[[i]], ", ") 
-      }
+      myexpr <- paste0(myexpr, args1[[i]], ", ") 
     }else{
-      if(class(argsall[[i]]) == "character"){
-        myexpr <- paste0(myexpr, argnm[i-l2], "='", argsall[[i]], "')")   
-      }else{
-        myexpr <- paste0(myexpr, argnm[i-l2], "=", argsall[[i]], ")")           
-      }
+      myexpr <- paste0(myexpr, args1[[i]], ",") 
     }
   }
+  myexpr <- paste0(myexpr, "manifestVars=",manifestVars,",latentVars=",latentVars,",remove=",remove,",independent=",independent,",type=",type,",name=",name,")")
   
   # call the OpenMx 'mxModel' function
   library(OpenMx)
