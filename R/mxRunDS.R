@@ -21,7 +21,7 @@
 #' Timothy C. Bates, Paras Mehta, Timo von Oertzen, Ross J. Gore, Michael D. Hunter, Daniel C. Hackett, Julian Karch and 
 #' Andreas M. Brandmaier. (2012) OpenMx 1.3 User Guide.
 #' 
-ds.mxRunDS <- function(model, intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer){
+mxRunDS <- function(model, intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer){
   
   # construct the command to evaluate
   argsall <- c(intervals, silent, suppressWarnings, unsafe, checkpoint, useSocket, onlyFrontend, useOptimizer)

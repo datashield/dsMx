@@ -1,4 +1,4 @@
-export(ds.mxRunDS)
 export(mxAlgebraDS)
 export(mxModelDS)
+export(mxRunDS)
 export(mxSummaryDS)
