@@ -30,9 +30,17 @@ mxRunDS <- function(model, intervals, silent, suppressWarnings, unsafe, checkpoi
   myexpr <- paste0("mxRun(model='",model,"', ")
   for(i in 1:length(argsall)){
     if(i < l){
-      myexpr <- paste0(myexpr, argnm[i], "=", argsall[[i]], ", ")
+      if(class(argsall[[i]]) == "character"){
+        myexpr <- paste0(myexpr, argnm[i], "='", argsall[[i]], "', ")        
+      }else{
+        myexpr <- paste0(myexpr, argnm[i], "=", argsall[[i]], ", ")        
+      }
     }else{
-      myexpr <- paste0(myexpr, argnm[i], "=", argsall[[i]], ")")         
+      if(class(argsall[[i]]) == "character"){
+        myexpr <- paste0(myexpr, argnm[i], "='", argsall[[i]], "'')")   
+      }else{
+        myexpr <- paste0(myexpr, argnm[i], "=", argsall[[i]], ")")           
+      }
     }
   }
 
