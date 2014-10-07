@@ -24,11 +24,13 @@
 #' 
 mxDataDS <- function(observed, type, means, numObs){
   # this filter sets the minimum number of observations that are allowed 
-  nfilter <- 5#setFilterDS()
+  nfilter <- setFilterDS()
   
   # call the OpenMx 'mxData' function
+  library(OpenMx)
   dt <- mxData(observed, type, means, numObs)
-  
+  cat(class(dt),"\n")
+  cat(dim(dt),"\n")
   # check if the ouput matrix is valid or empty (i.e. no observation) and return accordingly
   if(dim(dt)[1] < nfilter){
     if(dim(dt)[1] == 0){

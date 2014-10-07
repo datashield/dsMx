@@ -37,6 +37,7 @@ mxAlgebraDS <- function (expr, name = NA, dimnames = NA){
     myexpr <- paste0("mxAlgebra(", symbol, "(", paste(str, sep=","), ")",  ", '", name, "', ", dimnames, ")")
   }
   
+  library(OpenMx)
   output <- eval(parse(text=myexpr))
   return(output)
 }
