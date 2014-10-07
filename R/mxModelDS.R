@@ -29,14 +29,14 @@
 #' Timothy C. Bates, Paras Mehta, Timo von Oertzen, Ross J. Gore, Michael D. Hunter, Daniel C. Hackett, Julian Karch and 
 #' Andreas M. Brandmaier. (2012) OpenMx 1.3 User Guide.
 #' 
-mxModelDS <- function(model=NA, lst, manifestVars, latentVars, remove, independent, type, name){
+mxModelDS <- function(model, lst, manifestVars, latentVars, remove, independent, type, name){
   
   # construct the command to evaluate
   args1 <- lst
   args2 <- list(manifestVars, latentVars, remove, independent, type, name)
   argnm <- c("manifestVars", "latentVars", "remove", "independent", "type", "name")
   argsall <- c(args1, args2)
-  myexpr <- paste0("mxModel('",model,"', ")
+  myexpr <- paste0("mxModel(",model,", ")
   l1 <- length(argsall)
   l2 <- length(args1)
   for(i in 1:length(argsall)){

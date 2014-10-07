@@ -2,8 +2,7 @@
 \alias{mxModelDS}
 \title{Creates a new mxModel object}
 \usage{
-mxModelDS(model = NA, lst, manifestVars, latentVars, remove, independent,
-  type, name)
+mxModelDS(model, lst, manifestVars, latentVars, remove, independent, type, name)
 }
 \arguments{
   \item{model}{this argument is either an mxModel object or
