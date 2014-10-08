@@ -23,4 +23,5 @@ AssignMethods: mxRunDS,
     mxCI=OpenMx::mxCI,
     mxAlgebra=OpenMx::mxAlgebra,
     mxAlgebraDS,
-    list=base::list
+    list=base::list,
+    c=base::c
