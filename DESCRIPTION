@@ -10,6 +10,8 @@ Depends:
 AggregateMethods: list=base::list,
     summary=base::summary
 AssignMethods: mxRunDS,
+    mxRun=OpenMx::mxRun,
+    mxModel=OpenMx::mxModel,
     paste0=base::paste0,
     rep=base::rep,
     diag=base::diag,
