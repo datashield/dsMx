@@ -12,7 +12,8 @@
 #' @author A. Gaye
 #' 
 mxSummaryDS <- function (input){
-
+  library(OpenMx)
+  output <- OpenMx::summary(input)
   # remove non relevant information
   #idx1 <- which(names(output) %in% c("frontendTime", "backendTime", "independentTime", "wallTime", "cpuTime"))
   #if(length(idx1) > 0){ output <- output[-idx1] }
@@ -27,6 +28,6 @@ mxSummaryDS <- function (input){
   #    output$dataSummary[[i]][lrw,] <- c(rep("Max.   :------  ",2))
   #  }
   #}
-  print(input)
-  return(input)
+  print(output)
+  return(output)
 }
