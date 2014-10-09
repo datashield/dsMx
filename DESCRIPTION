@@ -3,8 +3,8 @@ Maintainer: <datashield@obiba.org>
 Author: <datashield@obiba.org>
 Version: 1.0.0
 License: GPL-3
-Title: Datashield for package advanced structural equation modeling
-Description: This package implement functions from the OpenMx package
+Title: Datashield package for advanced structural equation modelling
+Description: This package implement functions from the OpenMx library.
 Depends:
     OpenMx
 AggregateMethods: mxSummaryDS
