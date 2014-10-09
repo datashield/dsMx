@@ -13,7 +13,9 @@ a list that holds the summary items.
 }
 \description{
 This function ensures the summaries returned to user
-contain no potentially disclosive information.
+contain no potentially disclosive information. It gets the
+summary already produced and stored on the server site and
+removes potentially disclosive elements.
 }
 \details{
 
