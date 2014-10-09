@@ -27,6 +27,6 @@ mxSummaryDS <- function (input){
   #    output$dataSummary[[i]][lrw,] <- c(rep("Max.   :------  ",2))
   #  }
   #}
-
+  print(input)
   return(input)
 }
