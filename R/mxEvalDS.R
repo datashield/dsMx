@@ -25,7 +25,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   
   # get the names of the objects and the labels of the single estimates of the model
   library(OpenMx)
-  myModel <- model
+  myModel <- eval(parse(text=model)) 
   exprs1 <- paste0("names(", myModel, ")")
   modelobj1 <- eval(parse(text=exprs1))
   exprs2 <- paste0("omxGetParameters(", myModel, ")")
@@ -33,7 +33,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   modnames <- c(modelobj1, modelobj2)
   
   # first we extract the element of the expression
-  mySymbols <- c("solve", "t", "^", "%*%", "*", "%x%", "%&%", "/", "+", "-", "-", "cbind", "rbind", "det", 
+  mySymbols <- c("solve", "t", "^", "%*%", "*", "%x%", "%&%", "/", "+", "-", ":", "cbind", "rbind", "det", 
                  "tr", "sum", "prod", "max", "min", "abs", "cos", "cosh", "sin", "sinh", "tan", "tanh", "exp", 
                  "log", "sqrt", "vech", "vechs", "diag2vec", "vec2diag", "omxMnor", "omxAllInt", ":", "%^%", 
                  "rvectorize", "cvectorize", "eigenvec", "eigenval", "ieigenvec", "ieigenval", "omxNot", 
