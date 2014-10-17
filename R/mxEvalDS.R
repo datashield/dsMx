@@ -39,7 +39,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
                  "rvectorize", "cvectorize", "eigenvec", "eigenval", "ieigenvec", "ieigenval", "omxNot", 
                  "omxSelectRows", "omxSelectCols", "omxSelectRowsAndCols", "mean", "omxGreaterThan", "omxLessThan", 
                  "omxAnd", "omxOr", "omxApproxEquals", "omxExponential", "omxExponential", "chol", "cov2cor", "(", ")")
-  expr1 <- gsub(" ", "", expression)
+  expr1 <- gsub(" ", "", expression, fixed=TRUE)
   for(i in 1:length(mySymbols)){
     expr1 <- gsub(mySymbols[i], ";", expr1, fixed=TRUE)
   }
