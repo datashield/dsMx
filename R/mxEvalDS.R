@@ -25,7 +25,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   
   # get the names of the objects and the labels of the single estimates of the model
   library(OpenMx)
-  myModel <- eval(parse(text=model)) 
+  myModel <- model
   exprs1 <- paste0("names(", myModel, ")")
   modelobj1 <- eval(parse(text=exprs1))
   exprs2 <- paste0("omxGetParameters(", myModel, ")")
