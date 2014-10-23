@@ -2,12 +2,12 @@
 \alias{mxAlgebraDS}
 \title{Runs 'mxAlgebra'}
 \usage{
-mxAlgebraDS(expr, name = NA, dimnames = NA)
+mxAlgebraDS(expression, name = NA, dimnames = NA)
 }
 \arguments{
-  \item{expr}{a list which contains the objects to carry
-  out a caluclation for and the algebraic operator or null
-  if no operator symbol is required.}
+  \item{expression}{a list which contains the objects to
+  carry out a caluclation for and the algebraic operator or
+  null if no operator symbol is required.}
 
   \item{name}{an optional character string indicating the
   name of the object.}

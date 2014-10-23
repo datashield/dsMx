@@ -1,9 +1,8 @@
 #'
 #' @title Runs 'mxAlgebra'
-#' @param expr a list which contains the objects to carry out a caluclation for
+#' @param expression a list which contains the objects to carry out a caluclation for
 #' and the algebraic operator or null if no operator symbol is required.
-#' @param name an optional character string indicating the name of the
-#' object.
+#' @param name an optional character string indicating the name of the object.
 #' @param dimnames list, the dimnames attribute for the algebra: a list of
 #' length 2 giving the row and column names respectively. An
 #' empty list is treated as NULL, and a list of length one as
@@ -15,28 +14,15 @@
 #' @export
 #' @author A. Gaye
 #' 
-mxAlgebraDS <- function (expr, name = NA, dimnames = NA){
-  symbol <- expr[[2]]
-  operators <- c("hat","percAsterix","asterix","percX","percAdd","slash","plus","percHat")
-  if(expr[[2]] %in% operators){
-    if(symbol=="hat"){ symbol <- "^" }
-    if(symbol=="percAsterix"){ symbol <- "%*%" }
-    if(symbol=="asterix"){ symbol <- "*" }
-    if(symbol=="percX"){ symbol <- "%x%" }
-    if(symbol=="percAdd"){ symbol <- "%&%" }
-    if(symbol=="slash"){ symbol <- "/" }
-    if(symbol=="plus"){ symbol <- "+" }
-    if(symbol=="percHat"){ symbol <- "%^%" }
-    str <- expr[[1]][1]
-    for(i in 2:length(expr[[1]])){
-      str <- paste0(str,symbol,str <- expr[[1]][i])
-    }
-    myexpr <- paste0("mxAlgebra(", str,", '", name, "', ", dimnames, ")")
-  }else{
-    str <- expr[[1]]
-    myexpr <- paste0("mxAlgebra(", symbol, "(", paste(str, sep=","), ")",  ", '", name, "', ", dimnames, ")")
-  }
+mxAlgebraDS <- function (expression, name = NA, dimnames = NA){
+  # reconstruct the expression passed on from the client side i.e. 
+  # replacing characters by their equivalent 'omxSymbolTable' symbols/names
+  # and generate the final command to evaluate (the command is formed as a 
+  # string character; we run the command by actually evaluating the string character).
+  str <- recontruct(expression)
+  myexpr <- paste0("mxAlgebra(", str,", '", name, "', ", dimnames, ")")
   
+  # run the command
   library(OpenMx)
   output <- eval(parse(text=myexpr))
   return(output)
