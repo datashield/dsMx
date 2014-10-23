@@ -19,7 +19,7 @@ mxAlgebraDS <- function (expression, name = NA, dimnames = NA){
   # replacing characters by their equivalent 'omxSymbolTable' symbols/names
   # and generate the final command to evaluate (the command is formed as a 
   # string character; we run the command by actually evaluating the string character).
-  str <- recontruct(expression)
+  str <- reconstruct(expression)
   myexpr <- paste0("mxAlgebra(", str,", '", name, "', ", dimnames, ")")
   
   # run the command
