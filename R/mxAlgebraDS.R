@@ -21,7 +21,7 @@ mxAlgebraDS <- function (expression, name, dimnames){
   # string character; we run the command by actually evaluating the string character).
   str <- reconstruct(expression)
   if(is.na(name)){
-    myexpr <- paste0("mxAlgebra(", str ", ", name, ", ", dimnames, ")")
+    myexpr <- paste0("mxAlgebra(", str, ", ", name, ", ", dimnames, ")")
   }else{
     myexpr <- paste0("mxAlgebra(", str, ", '", name, "', ", dimnames, ")")
   }  
