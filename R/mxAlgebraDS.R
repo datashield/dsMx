@@ -14,13 +14,17 @@
 #' @export
 #' @author A. Gaye
 #' 
-mxAlgebraDS <- function (expression, name = NA, dimnames = NA){
+mxAlgebraDS <- function (expression, name, dimnames){
   # reconstruct the expression passed on from the client side i.e. 
   # replacing characters by their equivalent 'omxSymbolTable' symbols/names
   # and generate the final command to evaluate (the command is formed as a 
   # string character; we run the command by actually evaluating the string character).
   str <- reconstruct(expression)
-  myexpr <- paste0("mxAlgebra(", str,", '", name, "', ", dimnames, ")")
+  if(is.na(name)){
+    myexpr <- paste0("mxAlgebra(", str ", ", name, ", ", dimnames, ")")
+  }else{
+    myexpr <- paste0("mxAlgebra(", str, ", '", name, "', ", dimnames, ")")
+  }  
   
   # run the command
   library(OpenMx)
