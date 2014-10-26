@@ -2,7 +2,7 @@
 \alias{mxAlgebraDS}
 \title{Runs 'mxAlgebra'}
 \usage{
-mxAlgebraDS(expression, name = NA, dimnames = NA)
+mxAlgebraDS(expression, name, dimnames)
 }
 \arguments{
   \item{expression}{a list which contains the objects to

@@ -8,8 +8,8 @@
 #' @return an string charcater with the the 'OpemMx' symbols
 #'
 reconstruct <- function(input){
-  symbols <- c("^", "%*%", "*", "%x%", "%&%", "/", "+", "-", ":", "%^%")
-  characters <- c("HAT", "PERCASTERIX", "ASTERIX", "PERCX", "PERCADD", "SLASH", "PLUS", "MINUS", "COLON", "PERCHAT")
+  symbols <- c("^", "%*%", "*", "%x%", "%&%", "/", "+", "-", ":", "%^%", "(", ")")
+  characters <- c("HAT", "PERCASTERIX", "ASTERIX", "PERCX", "PERCADD", "SLASH", "PLUS", "MINUS", "COLON", "PERCHAT", "OBR", "CBR")
   output <- input
   for(i in 1:length(symbols)){
     output <- gsub(characters[i], symbols[i], output)
