@@ -28,7 +28,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   myModel <- model
   exprs1 <- paste0("names(", myModel, ")")
   modelobj1 <- eval(parse(text=exprs1))
-  exprs2 <- paste0("omxGetParameters(", myModel, ")")
+  exprs2 <- paste0("names(omxGetParameters(", myModel, "))")
   modelobj2 <- eval(parse(text=exprs2)) 
   modnames <- c(modelobj1, modelobj2)
   
