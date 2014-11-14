@@ -21,7 +21,7 @@
 mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   
   # replace the characters in the expression by their corresponding symbols
-  expression <- reconstruct(expression)
+  str <- reconstruct(expression)
   
   # get the names of the objects and the labels of the single estimates of the model
   library(OpenMx)
@@ -39,7 +39,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
                  "rvectorize", "cvectorize", "eigenvec", "eigenval", "ieigenvec", "ieigenval", "omxNot", 
                  "omxSelectRows", "omxSelectCols", "omxSelectRowsAndCols", "mean", "omxGreaterThan", "omxLessThan", 
                  "omxAnd", "omxOr", "omxApproxEquals", "omxExponential", "omxExponential", "chol", "cov2cor", "(", ")")
-  expr1 <- gsub(" ", "", expression, fixed=TRUE)
+  expr1 <- gsub(" ", "", str, fixed=TRUE)
   for(i in 1:length(mySymbols)){
     expr1 <- gsub(mySymbols[i], ";", expr1, fixed=TRUE)
   }
@@ -60,7 +60,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   if(length(holder) > 0){
     output <- paste0("ERROR: The element(s) '", paste(holder, collapse="', '"), "' is(are) not from the model '", model, "'!")
   }else{
-    myexpr <- paste0("mxEval(expression=",expression,",model=", model, ",compute=", compute, ",show=", show, ",defvar.row=", defvar.row, ",cacheBack=", cacheBack, ")")
+    myexpr <- paste0("mxEval(expression=",str,",model=", model, ",compute=", compute, ",show=", show, ",defvar.row=", defvar.row, ",cacheBack=", cacheBack, ")")
     library(OpenMx)
     output <- eval(parse(text=myexpr))    
   }
