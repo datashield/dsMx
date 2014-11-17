@@ -9,7 +9,8 @@ Depends:
     OpenMx
 AggregateMethods: mxSummaryDS,
     mxEvalDS,
-    list=base::list
+    list=base::list,
+    omxGetParameters=OpenMX::omxGetParameters
 AssignMethods: mxRunDS,
     paste0=base::paste0,
     rep=base::rep,
@@ -22,6 +23,7 @@ AssignMethods: mxRunDS,
     mxCI=OpenMx::mxCI,
     mxAlgebra=OpenMx::mxAlgebra,
     mxAlgebraDS,
+    omxSetParameters=OpenMx::omxSetParameters,
     list=base::list,
     c=base::c,
     matrix=base::matrix
