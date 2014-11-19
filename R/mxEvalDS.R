@@ -50,7 +50,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   # check if the elements in the expression are from the model if not stop and return a message
   holder <- c()
   for(i in 1:length(elts2)){
-    if(!(is.numeric(eval(parse(text=elts2[i]))))){
+    if(!(is.numeric(elts2[i]))){
       if(!(elts2[i] %in% modnames)){
         holder <- append(holder, elts2[i])
       }
