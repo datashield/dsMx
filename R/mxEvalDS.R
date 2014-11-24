@@ -32,13 +32,14 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   modelobj2 <- eval(parse(text=exprs2)) 
   modnames <- c(modelobj1, modelobj2)
   
-  # first we extract the element of the expression
-  mySymbols <- c("solve", "t", "^", "%*%", "*", "%x%", "%&%", "/", "+", "-", ":", "cbind", "rbind", "det", 
-                 "tr", "sum", "prod", "max", "min", "abs", "cos", "cosh", "sin", "sinh", "tan", "tanh", "exp", 
-                 "log", "sqrt", "vech", "vechs", "diag2vec", "vec2diag", "omxMnor", "omxAllInt", ":", "%^%", 
-                 "rvectorize", "cvectorize", "eigenvec", "eigenval", "ieigenvec", "ieigenval", "omxNot", 
-                 "omxSelectRows", "omxSelectCols", "omxSelectRowsAndCols", "mean", "omxGreaterThan", "omxLessThan", 
-                 "omxAnd", "omxOr", "omxApproxEquals", "omxExponential", "omxExponential", "chol", "cov2cor", "(", ")")
+  # first we extract the element of the expression. Suffix '(' added to ensure the word is replaced only when used as function
+  mySymbols <- c("solve(", "t(", "^", "%*%", "*", "%x%", "%&%", "/", "+", "-", ":", "cbind(", "rbind(", "det(", 
+                 "tr(", "sum(", "prod(", "max(", "min(", "abs(", "cos(", "cosh(", "sin(", "sinh(", 
+                 "tan(", "tanh(", "exp(", "log(", "sqrt(", "vech(", "vechs(", "diag2vec(", "vec2diag(", 
+                 "omxMnor(", "omxAllInt(", ":", "%^%", "rvectorize(", "cvectorize(", "eigenvec(", "eigenval(", 
+                 "ieigenvec(", "ieigenval(", "omxNot(", "omxSelectRows(", "omxSelectCols(", "omxSelectRowsAndCols(", 
+                 "mean(", "omxGreaterThan(", "omxLessThan(", "omxAnd(", "omxOr(", "omxApproxEquals(", "omxExponential(", 
+                 "omxExponential(", "chol(", "cov2cor(", "(", ")")
   expr1 <- gsub(" ", "", str, fixed=TRUE)
   for(i in 1:length(mySymbols)){
     expr1 <- gsub(mySymbols[i], ";", expr1, fixed=TRUE)
@@ -49,7 +50,7 @@ mxEvalDS <- function(expression, model, compute, show, defvar.row, cacheBack){
   # check if the elements in the expression are from the model if not stop and return a message
   holder <- c()
   for(i in 1:length(elts2)){
-    if(!(is.numeric(eval(parse(text=elts2[i]))))){
+    if(!(is.numeric(elts2[i]))){
       if(!(elts2[i] %in% modnames)){
         holder <- append(holder, elts2[i])
       }
