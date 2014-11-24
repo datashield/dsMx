@@ -34,7 +34,7 @@ mxModelDS <- function(model, lst, manifestVars, latentVars, remove, independent,
   # construct the command to evaluate
   args1 <- lst
   if(is.na(model)){
-    myexpr <- paste0("mxModel(model=",model,",")
+    myexpr <- paste0("mxModel(model='",name,"',")
   }else{
     if(exists(model)){
       myexpr <- paste0("mxModel(model=",model,",")        
