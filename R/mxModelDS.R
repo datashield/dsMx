@@ -52,7 +52,7 @@ mxModelDS <- function(model, lst, manifestVars, latentVars, remove, independent,
       }
     }
   }
-  myexpr <- paste0(myexpr, "manifestVars=",manifestVars,",latentVars=",latentVars,",remove=",remove,",independent=",independent,",type=",type,",name=",name,")")
+  myexpr <- paste0(myexpr, "manifestVars=",manifestVars,",latentVars=",latentVars,",remove=",remove,",independent=",independent,",type=",type,",name='",name,"')")
   
   # call the OpenMx 'mxModel' function
   library(OpenMx)
