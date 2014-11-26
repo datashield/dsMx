@@ -11,7 +11,7 @@ AggregateMethods: mxSummaryDS,
     mxEvalDS,
     list=base::list,
     omxGetParameters=OpenMx::omxGetParameters,
-    mxCompare=OpenMx::mxCompare
+    mxCompareDS
 AssignMethods: mxRunDS,
     paste0=base::paste0,
     rep=base::rep,
