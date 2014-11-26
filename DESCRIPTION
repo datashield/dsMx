@@ -10,7 +10,7 @@ Depends:
 AggregateMethods: mxSummaryDS,
     mxEvalDS,
     list=base::list,
-    omxGetParameters=OpenMx::omxGetParameters
+    omxGetParameters=OpenMx::omxGetParameters,
     mxCompare=OpenMx::mxCompare
 AssignMethods: mxRunDS,
     paste0=base::paste0,
